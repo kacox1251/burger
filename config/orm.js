@@ -1,10 +1,19 @@
-/*
-    * `selectAll()`
-    * `insertOne()`
-    * `updateOne()`
-*/
-
 const connection = require("../config/connection.js");
+
+function objToSql(ob) {
+  const arr = [];
+
+  for (let key in ob) {
+    const value = ob[key];
+    if (Object.hasOwnProperty.call(ob, key)) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = "'" + value + "'";
+      }
+      arr.push(key + "=" + value);
+    }
+  }
+  return arr.toString();
+}
 
 const orm = {
   all: function(table, cb) {
@@ -17,7 +26,7 @@ const orm = {
     });
   },
   create: function(table, column, value, cb) {
-    const queryString = `INSERT INTO ${table} (${column}, devoured) VALUES (${value}, false)`;
+    const queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (?, false)`;
 
     console.log(queryString);
 
@@ -30,7 +39,7 @@ const orm = {
     });
   },
   update: function(table, columnVal, condition, cb) {
-    const queryString = `UPDATE ${table} SET (${columnVal}) WHERE (${condition} false)`;
+    const queryString = `UPDATE ${table} SET ${objToSql(columnVal)} WHERE ${condition}`;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {

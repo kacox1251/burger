@@ -1,14 +1,10 @@
-{{!-- need a form to write burger names and a submit button that will submit them to the db --}}
-{{!-- submitted burgers will be displayed on the not devoured side with the id, the name, and a devour button --}}
-{{!-- when devour button is hit the boolean changes to true and the burgers pop over to the devoured side --}}
-
 <h1>Eat Da Burger!</h1>
 
 
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
-        <h3> {{burgers.RowDataPacket.burger_name}} </h3>
+        <h3> {{id}}. {{burger_name}} </h3>
         <button class="devour" data-id="{{id}}">
 		    Devour!
 	    </button>
@@ -24,7 +20,7 @@
 </ul>
 
 <h2>Add a Burger</h2>
-<form class="add-burger-container">
+<form class="add-burger-form">
   <div class="add-burger">
     <input type="text" id="burger" name="name">
   </div>
