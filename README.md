@@ -8,7 +8,7 @@ This is an app that lets you add and eat burgers!
 
 In order to install this project follow the Github link to https://github.com/kacox1251/updated-portfolio and fork the project. After that clone the repository through your Git Bash. To do that type 'git clone" and paste the HTML link inside your terminal, it will ask you for your github password. After the repository is saved in the directory of your choice you can access the HTML and CSS files and view them in your default browser.
 You can also download as a zip file by clicking "Download zip" in the "Clone or Download" dropdown.
-You can also see the live site by following the link to https://kacox1251.github.io/updated-portfolio/.
+You can also see the live site by following the link to https://intense-tor-00953.herokuapp.com/.
 
 ## Usage
 
@@ -22,7 +22,7 @@ Credit to this project belongs to me.
 
 MIT License
 
-Copyright (c) [2019] [Krystal Cox]
+Copyright (c) [2020] [Krystal Cox]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
