@@ -27,9 +27,6 @@ const orm = {
   },
   create: function(table, column, value, cb) {
     const queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (?, false)`;
-
-    console.log(queryString);
-
     connection.query(queryString, value, function(err, result) {
       if (err) {
         throw err;
@@ -40,8 +37,6 @@ const orm = {
   },
   update: function(table, columnVal, condition, cb) {
     const queryString = `UPDATE ${table} SET ${objToSql(columnVal)} WHERE ${condition}`;
-
-    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

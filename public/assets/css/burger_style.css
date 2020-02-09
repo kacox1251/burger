@@ -1,0 +1,11 @@
+body {
+    background-image: url(../img/burger-background.png);
+}
+
+#not-devoured {
+    float: left;
+}
+
+#devoured {
+    float: right;
+}

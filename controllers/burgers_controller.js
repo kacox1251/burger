@@ -9,7 +9,6 @@ router.get("/", function(req, res) {
     const obj = {
       burgers: data
     };
-    console.log(obj);
     res.render("index", obj);
   });
 });
@@ -26,9 +25,6 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("/api/burgers/:id", function(req, res) {
   const condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
   burger.update({
     devoured: req.body.devoured
   }, condition, function(result) {
