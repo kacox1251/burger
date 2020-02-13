@@ -1,5 +1,6 @@
 body {
-    background-image: url(../img/burger-background.png);
+    background-image: url("../img/burger-background.png");
+    background-position: center;
 }
 
 #not-devoured {
